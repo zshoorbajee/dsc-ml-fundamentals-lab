@@ -628,6 +628,24 @@ assert round(poly_rmse, 2) == 15.07
 
 In the cell below, use `cross_val_score` to find an averaged cross-validated RMSE using the same technique you used in Step 2.
 
+
+```python
+
+# Get the cross validated scores for our transformed features
+poly_cv = cross_val_score(baseline_model, X_train_poly, y_train, scoring="neg_root_mean_squared_error")
+
+# Display the average of the cross-validated scores
+poly_cv_rmse = -(poly_cv.mean())
+poly_cv_rmse
+```
+
+
+
+
+    17.738421720231184
+
+
+
 The cross-validated RMSE should be about 17.74:
 
 
@@ -719,7 +737,7 @@ for ax in (ax1, ax2):
 ```
 
 
-![png](index_files/index_44_0.png)
+![png](index_files/index_45_0.png)
 
 
 Based on the above graphs, let's plan to use a polynomial degree of 5. Why? Because that is where the RMSE for the training data has dropped down to essentially zero, meaning we are close to perfectly overfitting on the training data.
@@ -937,7 +955,7 @@ ax.legend();
 ```
 
 
-![png](index_files/index_62_0.png)
+![png](index_files/index_63_0.png)
 
 
 (This time both are plotted on the same axes because the RMSE has the same order of magnitude.)
@@ -1119,7 +1137,7 @@ ax.legend();
 ```
 
 
-![png](index_files/index_80_0.png)
+![png](index_files/index_81_0.png)
 
 
 In general, as the true blood pressure values increase, so do the predicted blood pressure values. So, it's clear that our model is picking up on *some* information from our features.

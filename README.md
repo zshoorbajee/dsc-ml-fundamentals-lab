@@ -824,7 +824,7 @@ poly_cv_rmse
 
 
 ```python
-# Replace None with appropriate code
+# __SOLUTION__
 
 # Get the cross validated scores for our transformed features
 poly_cv = cross_val_score(baseline_model, X_train_poly, y_train, scoring="neg_root_mean_squared_error")

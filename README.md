@@ -368,25 +368,6 @@ poly_cv_rmse = -(poly_cv.mean())
 poly_cv_rmse
 ```
 
-
-```python
-# Replace None with appropriate code
-
-# Get the cross validated scores for our transformed features
-poly_cv = cross_val_score(baseline_model, X_train_poly, y_train, scoring="neg_root_mean_squared_error")
-
-# Display the average of the cross-validated scores
-poly_cv_rmse = -(poly_cv.mean())
-poly_cv_rmse
-```
-
-
-
-
-    17.738421720231184
-
-
-
 The cross-validated RMSE should be about 17.74:
 
 
